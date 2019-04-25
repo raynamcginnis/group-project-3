@@ -12,9 +12,9 @@ function App() {
       <Nav/>
         <Switch>
           <Route exact path="/" component={Main} />
-          <Route exact path="/cheatsheets" component={Main} />
-          <Route exact path="/cheatsheets/:id" component={CheatSheets} />
-          <Route exact path="/about" component={About} />
+          <Route exact path="/Main.js" component={Main} />
+          <Route exact path="/CheatSheets.js" component={CheatSheets} />
+          <Route exact path="/About.js" component={About} />
           <Route component={NoMatch} />
         </Switch>
       </div>
