@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
 class Main extends Component {
     state = {
@@ -50,9 +47,12 @@ class Main extends Component {
         return (
             <Container fluid>
                 <Row>
-                    <Col size="md-6">
+                    <Col size="lg-12">
                         <Jumbotron>
-                            <h1>Search for a cheat sheet</h1>
+                            <h1>
+                                {" "}
+                                SEARCH FOR A CHEATSHEET BELOW!
+                            </h1>
                         </Jumbotron>
                         <form>
                             <Input
@@ -68,38 +68,6 @@ class Main extends Component {
                                 Search for CheatSheet
                             </FormBtn>
                         </form>
-                    </Col>
-                    <Col size="md-6 sm-12">
-                        <Jumbotron>
-                            <h1>Cheatsheets List</h1>
-                        </Jumbotron>
-                        {this.state.cheatsheets.length ? (
-                            <List>
-                                {this.state.cheatsheets.map(cheatsheet => (
-                                    <ListItem key={cheatsheet._id}>
-                                        <Link
-                                            to={
-                                                "/cheatsheets/" + cheatsheet._id
-                                            }
-                                        >
-                                            <strong>
-                                                {cheatsheet.title} by{" "}
-                                                {cheatsheet.author}
-                                            </strong>
-                                        </Link>
-                                        <DeleteBtn
-                                            onClick={() =>
-                                                this.deleteCheatSheet(
-                                                    cheatsheet._id
-                                                )
-                                            }
-                                        />
-                                    </ListItem>
-                                ))}
-                            </List>
-                        ) : (
-                            <h3>No Results to Display</h3>
-                        )}
                     </Col>
                 </Row>
             </Container>
