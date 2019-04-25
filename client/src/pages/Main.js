@@ -5,114 +5,104 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
-
+import { Input, FormBtn } from "../components/Form";
 class Main extends Component {
-  state = {
-    books: [],
-    title: "",
-    author: "",
-    synopsis: ""
-  };
+    state = {
+        cheatsheets: [],
+        title: ""
+    };
 
-  componentDidMount() {
-    this.loadBooks();
-  }
-
-  loadBooks = () => {
-    API.getBooks()
-      .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-      )
-      .catch(err => console.log(err));
-  };
-
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
-      .catch(err => console.log(err));
-  };
-
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
-      })
-        .then(res => this.loadBooks())
-        .catch(err => console.log(err));
+    componentDidMount() {
+        this.loadCheatSheets();
     }
-  };
 
-  render() {
-    return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>What Books Should I Read?</h1>
-            </Jumbotron>
-            <form>
-              <Input
-                value={this.state.title}
-                onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
-              />
-              <FormBtn
-                disabled={!(this.state.author && this.state.title)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Book
-              </FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Books On My List</h1>
-            </Jumbotron>
-            {this.state.books.length ? (
-              <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
+    loadCheatSheets = () => {
+        API.getBooks()
+            .then(res => this.setState({ cheatsheets: res.data, title: "" }))
+            .catch(err => console.log(err));
+    };
+
+    deleteCheatSheet = id => {
+        API.deleteCheatSheet(id)
+            .then(res => this.loadCheatSheets())
+            .catch(err => console.log(err));
+    };
+
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        if (this.state.title) {
+            API.saveCheatSheets({
+                title: this.state.title
+            })
+                .then(res => this.loadCheatSheets())
+                .catch(err => console.log(err));
+        }
+    };
+
+    render() {
+        return (
+            <Container fluid>
+                <Row>
+                    <Col size="md-6">
+                        <Jumbotron>
+                            <h1>Search for a cheat sheet</h1>
+                        </Jumbotron>
+                        <form>
+                            <Input
+                                value={this.state.title}
+                                onChange={this.handleInputChange}
+                                name="cheatSheet"
+                                placeholder="Language or Framework (required)"
+                            />
+                            <FormBtn
+                                active={!this.state.title}
+                                onClick={this.handleFormSubmit}
+                            >
+                                Search for CheatSheet
+                            </FormBtn>
+                        </form>
+                    </Col>
+                    <Col size="md-6 sm-12">
+                        <Jumbotron>
+                            <h1>Cheatsheets List</h1>
+                        </Jumbotron>
+                        {this.state.cheatsheets.length ? (
+                            <List>
+                                {this.state.cheatsheets.map(cheatsheet => (
+                                    <ListItem key={cheatsheet._id}>
+                                        <Link
+                                            to={
+                                                "/cheatsheets/" + cheatsheet._id
+                                            }
+                                        >
+                                            <strong>
+                                                {cheatsheet.title} by{" "}
+                                                {cheatsheet.author}
+                                            </strong>
+                                        </Link>
+                                        <DeleteBtn
+                                            onClick={() =>
+                                                this.deleteCheatSheet(cheatsheet._id)
+                                            }
+                                        />
+                                    </ListItem>
+                                ))}
+                            </List>
+                        ) : (
+                            <h3>No Results to Display</h3>
+                        )}
+                    </Col>
+                </Row>
+            </Container>
+        );
+    }
 }
 
 export default Main;

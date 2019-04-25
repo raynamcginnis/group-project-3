@@ -40,7 +40,7 @@ class CheatSheets extends Component {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
+            <Link to="/">← Back to Search</Link>
           </Col>
         </Row>
       </Container>
