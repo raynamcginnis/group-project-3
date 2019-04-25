@@ -23,7 +23,7 @@ class Main extends Component {
     };
 
     deleteCheatSheet = id => {
-        API.deleteCheatSheet(id)
+        API.deleteBook(id)
             .then(res => this.loadCheatSheets())
             .catch(err => console.log(err));
     };
