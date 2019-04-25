@@ -28,7 +28,7 @@ class CheatSheets extends Component {
             </Jumbotron>
           </Col>
         </Row>
-        <Row>
+        {/* <Row>
           <Col size="md-10 md-offset-1">
             <article>
               <h1>Synopsis</h1>
@@ -37,7 +37,7 @@ class CheatSheets extends Component {
               </p>
             </article>
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Col size="md-2">
             <Link to="/">← Back to Search</Link>
