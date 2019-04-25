@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Autocomplete } from "material-ui";
+import { AutoComplete } from "material-ui";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
