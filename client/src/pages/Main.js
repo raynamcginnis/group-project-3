@@ -56,7 +56,7 @@ class Main extends Component {
                         </Jumbotron>
                         <form>
                             <Input
-                                value={this.state.title}
+                                defaultValue={this.state.value}
                                 onChange={this.handleInputChange}
                                 name="cheatSheet"
                                 placeholder="Language or Framework (required)"
@@ -89,7 +89,9 @@ class Main extends Component {
                                         </Link>
                                         <DeleteBtn
                                             onClick={() =>
-                                                this.deleteCheatSheet(cheatsheet._id)
+                                                this.deleteCheatSheet(
+                                                    cheatsheet._id
+                                                )
                                             }
                                         />
                                     </ListItem>
