@@ -2,26 +2,38 @@ import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
-import { Input, FormBtn } from "../components/Form";
+import { List, ListItem } from "../components/List";
+import { Link } from "react-router-dom";
+
 class Main extends Component {
     state = {
-        cheatsheets: [],
-        title: ""
+        books: [],
+        title: "",
+        author: ""
     };
 
     componentDidMount() {
-        this.loadCheatSheets();
+        this.loadBooks();
     }
 
-    loadCheatSheets = () => {
+    loadBooks = () => {
         API.getBooks()
-            .then(res => this.setState({ cheatsheets: res.data, title: "" }))
+            .then(res =>
+                this.setState({ books: res.data, title: "", author: "" })
+            )
             .catch(err => console.log(err));
     };
 
-    deleteCheatSheet = id => {
+    deleteBook = id => {
         API.deleteBook(id)
-            .then(res => this.loadCheatSheets())
+            .then(res => this.loadBooks())
+            .catch(err => console.log(err));
+    };
+    findById = id => {
+        API.findById(id)
+            .then(res =>
+                this.loadBooks({ books: res.data, title: "", author: "" })
+            )
             .catch(err => console.log(err));
     };
 
@@ -34,11 +46,12 @@ class Main extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if (this.state.title) {
-            API.saveCheatSheets({
-                title: this.state.title
+        if (this.state.title && this.state.author) {
+            API.saveBook({
+                title: this.state.title,
+                author: this.state.author
             })
-                .then(res => this.loadCheatSheets())
+                .then(res => this.loadBooks())
                 .catch(err => console.log(err));
         }
     };
@@ -49,25 +62,23 @@ class Main extends Component {
                 <Row>
                     <Col size="lg-12">
                         <Jumbotron>
-                            <h1>
-                                {" "}
-                                SEARCH FOR A CHEATSHEET BELOW!
-                            </h1>
+                            <h1> SEARCH FOR A CHEATSHEET BELOW!</h1>
                         </Jumbotron>
-                        <form>
-                            <Input
-                                defaultValue={this.state.value}
-                                onChange={this.handleInputChange}
-                                name="cheatSheet"
-                                placeholder="Language or Framework (required)"
-                            />
-                            <FormBtn
-                                active={!this.state.title}
-                                onClick={this.handleFormSubmit}
-                            >
-                                Search for CheatSheet
-                            </FormBtn>
-                        </form>
+                        {this.state.books.length ? (
+                            <List>
+                                {this.state.books.map(book => (
+                                    <ListItem key={book._id}>
+                                        <Link to={"/books/" + book._id}>
+                                            <strong>
+                                                {book.title} by {book.author}
+                                            </strong>
+                                        </Link>
+                                    </ListItem>
+                                ))}
+                            </List>
+                        ) : (
+                            <h3>No Results to Display</h3>
+                        )}
                     </Col>
                 </Row>
             </Container>
