@@ -10,7 +10,7 @@ function Nav() {
       </a>
       <div className="navbar" id="navbarNavAltMarkup">
         <div className="navbar-nav">
-          <a className="nav-item nav-link" href="/Main.js">Main <span class="sr-only">(current)</span></a>
+          <a className="nav-item nav-link" href="/Main.js">Main <span className="sr-only">(current)</span></a>
           <a className="nav-item nav-link" href="/CheatSheets.js">Cheatsheets</a>
           <a className="nav-item nav-link" href="/About.js">About</a>
         </div>

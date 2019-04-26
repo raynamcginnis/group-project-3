@@ -6,25 +6,32 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
-class CheatSheets extends Component {
+class Books extends Component {
     state = {
-        cheatsheets: [],
-        title: ""
+        books: [],
+        title: "",
+        author: ""
     };
 
     componentDidMount() {
-        this.loadCheatSheets();
+        this.loadBooks();
     }
 
-    loadCheatSheets = () => {
+    loadBooks = () => {
         API.getBooks()
-            .then(res => this.setState({ cheatsheets: res.data, title: "" }))
+            .then(res =>
+                this.setState({
+                    books: res.data,
+                    title: "",
+                    author: ""
+                })
+            )
             .catch(err => console.log(err));
     };
 
-    deleteCheatSheet = id => {
+    deleteBook = id => {
         API.deleteBook(id)
-            .then(res => this.loadCheatSheets())
+            .then(res => this.loadBooks())
             .catch(err => console.log(err));
     };
 
@@ -37,61 +44,116 @@ class CheatSheets extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if (this.state.title) {
-            API.saveCheatSheets({
-                title: this.state.title
+        if (this.state.title && this.state.author) {
+            API.saveBook({
+                title: this.state.title,
+                author: this.state.author
             })
-                .then(res => this.loadCheatSheets())
+                .then(res => this.loadBooks())
                 .catch(err => console.log(err));
         }
     };
 
+    //     render() {
+    //         return (
+    //             <Container fluid>
+    //                 <Row>
+    //                     <Col size="md-6">
+    //                         <Jumbotron>
+    //                             <h1>Search for a cheat sheet</h1>
+    //                         </Jumbotron>
+    //                         <form>
+    //                             <Input
+    //                                 defaultValue={this.state.value}
+    //                                 onChange={this.handleInputChange}
+    //                                 name="cheatSheet"
+    //                                 placeholder="Language or Framework (required)"
+    //                             />
+    //                             <FormBtn
+    //                                 active={!this.state.title}
+    //                                 onClick={this.handleFormSubmit}
+    //                             >
+    //                                 Search for CheatSheet
+    //                             </FormBtn>
+    //                         </form>
+    //                     </Col>
+    //                     <Col size="md-6 sm-12">
+    //                         <Jumbotron>
+    //                             <h1>Cheatsheets List</h1>
+    //                         </Jumbotron>
+    //                         {this.state.books.length ? (
+    //                             <List>
+    //                                 {this.state.books.map(book => (
+    //                                     <ListItem key={book._id}>
+    //                                         <Link to={"/books/" + book._id}>
+    //                                             <strong>
+    //                                                 {book.title} by {book.author}
+    //                                             </strong>
+    //                                         </Link>
+    //                                         <DeleteBtn
+    //                                             onClick={() =>
+    //                                                 this.deleteBook(book._id)
+    //                                             }
+    //                                         />
+    //                                     </ListItem>
+    //                                 ))}
+    //                             </List>
+    //                         ) : (
+    //                             <h3>No Results to Display</h3>
+    //                         )}
+    //                     </Col>
+    //                 </Row>
+    //             </Container>
+    //         );
+    //     }
+    // }
     render() {
         return (
             <Container fluid>
                 <Row>
                     <Col size="md-6">
                         <Jumbotron>
-                            <h1>Search for a cheat sheet</h1>
+                            <h1>What Books Should I Read?</h1>
                         </Jumbotron>
                         <form>
                             <Input
-                                defaultValue={this.state.value}
+                                value={this.state.title}
                                 onChange={this.handleInputChange}
-                                name="cheatSheet"
-                                placeholder="Language or Framework (required)"
+                                name="title"
+                                placeholder="Title (required)"
+                            />
+                            <Input
+                                value={this.state.author}
+                                onChange={this.handleInputChange}
+                                name="author"
+                                placeholder="Author (required)"
                             />
                             <FormBtn
-                                active={!this.state.title}
+                                disabled={
+                                    !(this.state.author && this.state.title)
+                                }
                                 onClick={this.handleFormSubmit}
                             >
-                                Search for CheatSheet
+                                Submit Book
                             </FormBtn>
                         </form>
                     </Col>
                     <Col size="md-6 sm-12">
                         <Jumbotron>
-                            <h1>Cheatsheets List</h1>
+                            <h1>Books On My List</h1>
                         </Jumbotron>
-                        {this.state.cheatsheets.length ? (
+                        {this.state.books.length ? (
                             <List>
-                                {this.state.cheatsheets.map(cheatsheet => (
-                                    <ListItem key={cheatsheet._id}>
-                                        <Link
-                                            to={
-                                                "/cheatsheets/" + cheatsheet._id
-                                            }
-                                        >
+                                {this.state.books.map(book => (
+                                    <ListItem key={book._id}>
+                                        <Link to={"/books/" + book._id}>
                                             <strong>
-                                                {cheatsheet.title} by{" "}
-                                                {cheatsheet.author}
+                                                {book.title} by {book.author}
                                             </strong>
                                         </Link>
                                         <DeleteBtn
                                             onClick={() =>
-                                                this.deleteCheatSheet(
-                                                    cheatsheet._id
-                                                )
+                                                this.deleteBook(book._id)
                                             }
                                         />
                                     </ListItem>
@@ -107,4 +169,4 @@ class CheatSheets extends Component {
     }
 }
 
-export default CheatSheets;
+export default Books;
