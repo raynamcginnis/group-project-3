@@ -22,11 +22,11 @@ export function FormBtn(props) {
     return (
         <button
             {...props}
-            style={{ float: "right", marginBottom: 10 }}
+            style={{ justifyContent:"center", alignItems: "center", marginBottom: 10, width: "50%" }}
             className="btn btn-success"
             placeholder="submit"
         >
-            {props.children}
+            Submit {props.children}
         </button>
     );
 }

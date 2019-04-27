@@ -51,9 +51,7 @@ class Main extends Component {
             API.findByTitle({
                 title: this.state.title
             })
-                .then(res =>
-                    this.setState({ books: res.data, title: "" })
-                )
+                .then(res => this.setState({ books: res.data, title: "" }))
                 .catch(err => console.log(err));
         }
     };
@@ -73,7 +71,11 @@ class Main extends Component {
                             defaultValue={this.state.title}
                             onChange={this.handleInputChange}
                         />
-                        <FormBtn onClick={this.handleFormSubmit} />
+                        <FormBtn
+                            disabled={!(this.state.title)}
+                            onClick={this.handleFormSubmit}
+                        />
+                        <br />
                         {this.state.books.length ? (
                             <List>
                                 {this.state.books.map(book => (
