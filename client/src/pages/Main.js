@@ -47,12 +47,13 @@ class Main extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if (this.state.title && this.state.author) {
-            API.saveBook({
-                title: this.state.title,
-                author: this.state.author
+        if (this.state.title) {
+            API.findByTitle({
+                title: this.state.title
             })
-                .then(res => this.loadBooks())
+                .then(res =>
+                    this.setState({ books: res.data, title: "" })
+                )
                 .catch(err => console.log(err));
         }
     };
@@ -65,8 +66,14 @@ class Main extends Component {
                         <Jumbotron>
                             <h1> SEARCH FOR A CHEATSHEET BELOW!</h1>
                         </Jumbotron>
-                        <Input/>
-                        <FormBtn/>
+                        <Input
+                            name="title"
+                            type="text"
+                            placeholder="Type a language here"
+                            defaultValue={this.state.title}
+                            onChange={this.handleInputChange}
+                        />
+                        <FormBtn onClick={this.handleFormSubmit} />
                         {this.state.books.length ? (
                             <List>
                                 {this.state.books.map(book => (
