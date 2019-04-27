@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
+import { Input, FormBtn } from "../components/Form";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
@@ -64,6 +65,8 @@ class Main extends Component {
                         <Jumbotron>
                             <h1> SEARCH FOR A CHEATSHEET BELOW!</h1>
                         </Jumbotron>
+                        <Input/>
+                        <FormBtn/>
                         {this.state.books.length ? (
                             <List>
                                 {this.state.books.map(book => (
