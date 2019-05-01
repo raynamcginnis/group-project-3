@@ -53,60 +53,6 @@ class Books extends Component {
                 .catch(err => console.log(err));
         }
     };
-
-    //     render() {
-    //         return (
-    //             <Container fluid>
-    //                 <Row>
-    //                     <Col size="md-6">
-    //                         <Jumbotron>
-    //                             <h1>Search for a cheat sheet</h1>
-    //                         </Jumbotron>
-    //                         <form>
-    //                             <Input
-    //                                 defaultValue={this.state.value}
-    //                                 onChange={this.handleInputChange}
-    //                                 name="cheatSheet"
-    //                                 placeholder="Language or Framework (required)"
-    //                             />
-    //                             <FormBtn
-    //                                 active={!this.state.title}
-    //                                 onClick={this.handleFormSubmit}
-    //                             >
-    //                                 Search for CheatSheet
-    //                             </FormBtn>
-    //                         </form>
-    //                     </Col>
-    //                     <Col size="md-6 sm-12">
-    //                         <Jumbotron>
-    //                             <h1>Cheatsheets List</h1>
-    //                         </Jumbotron>
-    //                         {this.state.books.length ? (
-    //                             <List>
-    //                                 {this.state.books.map(book => (
-    //                                     <ListItem key={book._id}>
-    //                                         <Link to={"/books/" + book._id}>
-    //                                             <strong>
-    //                                                 {book.title} by {book.author}
-    //                                             </strong>
-    //                                         </Link>
-    //                                         <DeleteBtn
-    //                                             onClick={() =>
-    //                                                 this.deleteBook(book._id)
-    //                                             }
-    //                                         />
-    //                                     </ListItem>
-    //                                 ))}
-    //                             </List>
-    //                         ) : (
-    //                             <h3>No Results to Display</h3>
-    //                         )}
-    //                     </Col>
-    //                 </Row>
-    //             </Container>
-    //         );
-    //     }
-    // }
     render() {
         return (
             <Container fluid>
@@ -129,12 +75,15 @@ class Books extends Component {
                                 placeholder="Image url (required)"
                             />
                             <FormBtn
+                                style={{
+                                    textAlign: "center",
+                                    transform: "translate(20%, 0%"
+                                }}
                                 disabled={
                                     !(this.state.author && this.state.title)
                                 }
                                 onClick={this.handleFormSubmit}
-                            >
-                            </FormBtn>
+                            />
                         </form>
                     </Col>
                     <Col size="md-6 sm-12">
@@ -145,15 +94,25 @@ class Books extends Component {
                             <List>
                                 {this.state.books.map(book => (
                                     <ListItem key={book._id}>
-                                        <Link to={"/books/" + book._id}>
-                                            <img alt="cheatsheet" placeholder={book.title} src={book.author}>                                                
-                                            </img>
-                                        </Link>
                                         <DeleteBtn
                                             onClick={() =>
                                                 this.deleteBook(book._id)
                                             }
                                         />
+                                        <Link to={"/books/" + book._id}>
+                                            <div className="text-center">
+                                                {<h3>{book.title}</h3>}
+                                                <img
+                                                    style={{
+                                                        height: "200px",
+                                                        width: "150px"
+                                                    }}
+                                                    alt="cheatsheet"
+                                                    placeholder={book.title}
+                                                    src={book.author}
+                                                />
+                                            </div>
+                                        </Link>
                                     </ListItem>
                                 ))}
                             </List>

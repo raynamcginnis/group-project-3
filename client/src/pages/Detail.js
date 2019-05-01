@@ -21,23 +21,33 @@ class Detail extends Component {
             <Container fluid>
                 <Row>
                     <Col size="md-12">
-                        <Jumbotron>
-                            <h1>
-                                {this.state.book.title} by{" "}
-                                {this.state.book.author}
-                            </h1>
+                        <Jumbotron
+                            style={{
+                                clear: "both",
+                                textAlign: "center",
+                                maxWidth: "100%",
+                                height: "auto",
+                                padding: "auto"
+                            }}
+                        >
+                            <div>
+                                <img
+                                    style={{
+                                        width: "500px",
+                                        margin: "auto",
+                                        maxWidth: "100%",
+                                        height: "auto"
+                                    }}
+                                    alt="cheatsheet"
+                                    placeholder={this.state.book.title}
+                                    src={this.state.book.author}
+                                />{" "}
+                            </div>
                         </Jumbotron>
                     </Col>
                 </Row>
-                <Row>
-                    <Col size="md-10 md-offset-1">
-                        <article>
-                            <h1>Synopsis</h1>
-                            <p>{this.state.book.synopsis}</p>
-                        </article>
-                    </Col>
-                </Row>
-                <Row>
+
+                <Row style={{ whiteSpace: "nowrap" }}>
                     <Col size="md-2">
                         <Link to="/">← Back to Authors</Link>
                     </Col>
