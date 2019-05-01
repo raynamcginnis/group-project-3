@@ -7,6 +7,7 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Detail from "./pages/Detail";
 
+
 function App() {
     return (
         <Router>

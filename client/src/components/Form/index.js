@@ -22,7 +22,7 @@ export function FormBtn(props) {
     return (
         <button
             {...props}
-            style={{ justifyContent:"center", alignItems: "center", marginBottom: 10, width: "50%" }}
+            style={{ justifyContent:"center", alignItems: "center", textAlign: "center", marginBottom: 10, width: "100%" }}
             className="btn btn-success"
             placeholder="submit"
         >

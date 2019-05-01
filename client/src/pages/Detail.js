@@ -21,13 +21,22 @@ class Detail extends Component {
             <Container fluid>
                 <Row>
                     <Col size="md-12">
-                        <Jumbotron>
+                        <Jumbotron
+                            style={{
+                                clear: "both",
+                                textAlign: "center",
+                                maxWidth: "100%",
+                                height: "auto",
+                                padding: "auto"
+                            }}
+                        >
                             <div>
                                 <img
                                     style={{
-                                        height: "500px",
                                         width: "500px",
-                                        margin: "auto"
+                                        margin: "auto",
+                                        maxWidth: "100%",
+                                        height: "auto"
                                     }}
                                     alt="cheatsheet"
                                     placeholder={this.state.book.title}
@@ -37,8 +46,8 @@ class Detail extends Component {
                         </Jumbotron>
                     </Col>
                 </Row>
-               
-                <Row>
+
+                <Row style={{ whiteSpace: "nowrap" }}>
                     <Col size="md-2">
                         <Link to="/">← Back to Authors</Link>
                     </Col>

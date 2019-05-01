@@ -72,7 +72,7 @@ class Main extends Component {
                             onChange={this.handleInputChange}
                         />
                         <FormBtn
-                            disabled={!(this.state.title)}
+                            disabled={!this.state.title}
                             onClick={this.handleFormSubmit}
                         />
                         <br />
@@ -81,9 +81,7 @@ class Main extends Component {
                                 {this.state.books.map(book => (
                                     <ListItem key={book._id}>
                                         <Link to={"/books/" + book._id}>
-                                            <strong>
-                                                {book.title}
-                                            </strong>
+                                            <strong>{book.title}</strong>
                                         </Link>
                                     </ListItem>
                                 ))}
