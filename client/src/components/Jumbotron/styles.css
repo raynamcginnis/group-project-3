@@ -1,0 +1,11 @@
+h1 {
+font-family: 'Montserrat Subrayada', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-size: 1.8em;
+}
+.jumbotron {
+    background-color: #B1BBF8;
+    color:  rgb(128, 12, 33);
+    overflow: hidden;
+    width:100%;
+}
