@@ -75,7 +75,10 @@ class Books extends Component {
                                 placeholder="Image url (required)"
                             />
                             <FormBtn
-                                style={{ textAlign: "center", transform:"translate(20%, 0%" }}
+                                style={{
+                                    textAlign: "center",
+                                    transform: "translate(20%, 0%"
+                                }}
                                 disabled={
                                     !(this.state.author && this.state.title)
                                 }
@@ -97,7 +100,7 @@ class Books extends Component {
                                             }
                                         />
                                         <Link to={"/books/" + book._id}>
-                                            <div>
+                                            <div className="text-center">
                                                 {<h3>{book.title}</h3>}
                                                 <img
                                                     style={{
