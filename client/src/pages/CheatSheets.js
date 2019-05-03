@@ -59,7 +59,7 @@ class Books extends Component {
                 <Row>
                     <Col size="md-6">
                         <Jumbotron>
-                            <h1>Save a new cheatsheet below</h1>
+                            <h1>Save a new Cheat Sheet below</h1>
                         </Jumbotron>
                         <form>
                             <Input
@@ -88,7 +88,7 @@ class Books extends Component {
                     </Col>
                     <Col size="md-6 sm-12">
                         <Jumbotron>
-                            <h1>Cheatsheets List</h1>
+                            <h1>Cheat Sheets List</h1>
                         </Jumbotron>
                         {this.state.books.length ? (
                             <List>
