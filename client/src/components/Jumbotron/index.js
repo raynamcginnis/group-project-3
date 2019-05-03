@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./styles.css"
 
 function Jumbotron({ children }) {
     return (
@@ -11,7 +11,7 @@ function Jumbotron({ children }) {
                 height: "auto",
                 padding: "auto"
             }}
-            className="jumbotron"
+            className="jumbotron fluid"
         >
             {children}
         </div>
