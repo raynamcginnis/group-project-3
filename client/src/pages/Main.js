@@ -67,7 +67,7 @@ class Main extends Component {
                 <Row>
                     <Col size="lg-12">
                         <Jumbotron>
-                            <h1> SEARCH FOR A CHEATSHEET BELOW!</h1>
+                            <h1> SEARCH FOR A CHEAT SHEET BELOW!</h1>
                         </Jumbotron>
                         {/* <Input
                             name="title"
