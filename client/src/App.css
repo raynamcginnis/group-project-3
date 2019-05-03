@@ -1,0 +1,30 @@
+.App {
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+H1 {
+    font-family: 'Karla', sans-serif;
+
+}
+
+H3 {
+    font-family: 'Karla', sans-serif;
+
+}
+
+p {
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Montserrat', sans-serif;
+}
+.navbar-light .navbar-nav .nav-link:active {
+    color: darkgrey;
+}
+
+.jumbotron {
+    background-color:lightgray;
+    color:#ea0e1d;
+}
