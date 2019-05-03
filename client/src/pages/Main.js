@@ -5,6 +5,8 @@ import { Input, FormBtn } from "../components/Form";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
+import GoogleSearch from "../components/GoogleSearch";
+
 
 class Main extends Component {
     state = {
@@ -12,6 +14,9 @@ class Main extends Component {
         title: "",
         author: ""
     };
+
+
+   
 
     componentDidMount() {
         this.loadBooks();
@@ -64,7 +69,7 @@ class Main extends Component {
                         <Jumbotron>
                             <h1> SEARCH FOR A CHEATSHEET BELOW!</h1>
                         </Jumbotron>
-                        <Input
+                        {/* <Input
                             name="title"
                             type="text"
                             placeholder="Type a language here"
@@ -74,6 +79,10 @@ class Main extends Component {
                         <FormBtn
                             disabled={!this.state.title}
                             onClick={this.handleFormSubmit}
+                        />
+                        <br>
+                        </br> */}
+                        <GoogleSearch
                         />
                         <br />
                         {this.state.books.length ? (
