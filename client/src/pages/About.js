@@ -3,15 +3,15 @@ import React from "react";
 function About() {
     return (
         <div className="m-4 pt-2 text-center">
-            <h1>About Page</h1>
+            <h1>About Web Dev Cheat Sheets</h1>
             <br />
             <div className="row">
                 <div className="col-sm-12">
                     {" "}
                     <p>
                         This application serves to be a <i> One Stop</i> shop to
-                        find your quick references for common Programming
-                        Languages and Frameworks!
+                        find your quick references for common programming
+                        languages and frameworks!
                     </p>
                     <p>
                         {" "}
@@ -21,7 +21,7 @@ function About() {
                     <p>
                         {" "}
                         Upload your own cheat sheet in the{" "}
-                        <strong><a href="/Cheatsheets.js">Cheatsheets</a></strong> page!
+                        <strong><a href="/Cheatsheets.js">Cheat Sheets</a></strong> page!
                     </p>
                 </div>
             </div>
