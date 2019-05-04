@@ -1,6 +1,8 @@
 .App {
     font-family: 'Montserrat', sans-serif;
-
+}
+.row {
+    margin: 0;
 }
 nav {
     text-shadow: 1px 1px 2px black;
@@ -42,4 +44,5 @@ a.nav-item.nav-link{
     background-color:darkgray;
     color:#fff;
     text-shadow: 1px 1px 2px black;
+    border-radius: 0;
 }
