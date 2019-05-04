@@ -2,6 +2,10 @@
     font-family: 'Montserrat', sans-serif;
 
 }
+nav {
+    text-shadow: 1px 1px 2px black;
+
+}
 
 H1 {
     font-family: 'Karla', sans-serif;
@@ -23,8 +27,19 @@ p {
 .navbar-light .navbar-nav .nav-link:active {
     color: darkgrey;
 }
+.container-fluid {
+    padding: 0;
+}
+
+a.navbar-brand{
+    font-size: 1.5em;
+}
+a.nav-item.nav-link{
+    font-size: 1.1em;
+}
 
 .jumbotron {
-    background-color:lightgray;
-    color:#ea0e1d;
+    background-color:darkgray;
+    color:#fff;
+    text-shadow: 1px 1px 2px black;
 }
