@@ -31,6 +31,8 @@ class Detail extends Component {
                             }}
                         >
                             <div>
+                                <h3>{this.state.book.title}</h3>
+                                <br></br>
                                 <img
                                     style={{
                                         width: "500px",
