@@ -3,6 +3,7 @@
 }
 .row {
     margin: 0;
+    min-width: 100%;
 }
 nav {
     text-shadow: 1px 1px 2px black;
