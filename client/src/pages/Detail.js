@@ -51,7 +51,7 @@ class Detail extends Component {
 
                 <Row style={{ whiteSpace: "nowrap" }}>
                     <Col size="md-2">
-                        <Link to="/">← Back to Cheat Sheets</Link>
+                        <Link to="/CheatSheets.js">← Back to Cheat Sheets</Link>
                     </Col>
                 </Row>
             </Container>
