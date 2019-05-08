@@ -7,6 +7,13 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Detail from "./pages/Detail";
 import "./App.css";
+import Account from "./components/Account";
+import Admin from "./components/Admin";
+import Home from "./components/Home";
+import SignIn from "./components/SignIn";
+import SignOut from "./components/SignOut";
+import SignUp from "./components/SignUp";
+
 
 
 function App() {
@@ -16,6 +23,12 @@ function App() {
                 <Nav />
                 <Switch>
                     <Route exact path="/" component={Main} />
+                    <Route exact path="/Account" component={Account} />
+                    <Route exact path="/Admin" component={Admin} />
+                    <Route exact path="/Home" component={Home} />
+                    <Route exact path="/SignIn" component={SignIn} />
+                    <Route exact path="/SignOut" component={SignOut} />
+                    <Route exact path="/SignUp" component={SignUp} />
                     <Route exact path="/Main.js" component={Main} />
                     <Route
                         exact
