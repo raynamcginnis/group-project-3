@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { FirebaseContext } from '../Firebase';
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import "../components";
+import { withFirebase } from '../Firebase';
+import { Link, withRouter } from 'react-router-dom';
+ import * as ROUTES from '../../constants/routes';
+
 
 const SignUpPage = () => (
   <div>
@@ -21,7 +23,7 @@ const INITIAL_STATE = {
     error: null,
   };
 
-class SignUpForm extends Component {
+class SignUpFormBase extends Component {
   constructor(props) {
     super(props);
     this.state = { ...INITIAL_STATE };
@@ -34,6 +36,7 @@ class SignUpForm extends Component {
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
+        this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
         this.setState({ error });
@@ -105,6 +108,8 @@ const SignUpLink = () => (
   <a className="nav-item nav-link" href="/SignUp.js">Sign Up</a>
   </p>
 );
+
+const SignUpForm = withRouter(withFirebase(SignUpFormBase));
 
 export default SignUpPage;
 
