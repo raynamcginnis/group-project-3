@@ -58,11 +58,10 @@ class Books extends Component {
     render() {
         return (
             <Container fluid>
-            <br></br>
+                <br />
                 <Row>
                     <Col size="md-6">
                         <Jumbotron style={{ minHeight: "150px" }}>
-
                             <h1>Save a new Cheat Sheet below</h1>
                         </Jumbotron>
                         <form>
@@ -91,8 +90,7 @@ class Books extends Component {
                         </form>
                     </Col>
                     <Col size="md-6 sm-12">
-
-                        <Jumbotron style={{minHeight:"150px"}}>
+                        <Jumbotron style={{ minHeight: "150px" }}>
                             <h1>Cheat Sheets List</h1>
                         </Jumbotron>
                         {this.state.books.length ? (
@@ -129,7 +127,8 @@ class Books extends Component {
                 <div className="row">
                     <div className="col-sm-12">
                         <p
-                            className="fixed-bottom text-center mt-4 mb-2 pt-2 pb-2" id="footer"
+                            className="fixed-bottom text-center mb-0"
+                            id="footer"
                             style={{
                                 borderTop: ".5px solid grey",
                                 color: "rgb(80, 122, 213)",
@@ -143,7 +142,7 @@ class Books extends Component {
                                 rel="noopener noreferrer"
                             >
                                 Rayna
-                </a>{" "}
+                            </a>{" "}
                             |{" "}
                             <a
                                 href="https://github.com/belamorris"
@@ -151,7 +150,7 @@ class Books extends Component {
                                 rel="noopener noreferrer"
                             >
                                 Robert
-                </a>{" "}
+                            </a>{" "}
                             |{" "}
                             <a
                                 href="https://github.com/TGHeadle1371"
@@ -159,7 +158,7 @@ class Books extends Component {
                                 rel="noopener noreferrer"
                             >
                                 Thomas
-                </a>{" "}
+                            </a>{" "}
                         </p>
                     </div>
                 </div>

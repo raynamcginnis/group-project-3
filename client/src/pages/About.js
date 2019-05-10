@@ -35,7 +35,7 @@ function About() {
             <div className="row">
                 <div className="col-sm-12">
                     <p
-                        className="fixed-bottom text-center mt-4 mb-2 pt-2 pb-2"
+                        className="fixed-bottom text-center mb-0"
                         style={{
                             borderTop: ".5px solid grey",
                             color: "rgb(80, 122, 213)",
