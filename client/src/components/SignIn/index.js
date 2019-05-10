@@ -8,7 +8,7 @@ import * as ROUTES from "../../constants/routes";
 
 const SignInPage = () => (
     <div className="text-center mt-5" id="signInForm">
-        <h1>SignIn</h1>
+        <h1>Sign In</h1>
         <SignInForm />
         <SignUpLink />
     </div>
