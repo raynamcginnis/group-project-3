@@ -59,7 +59,8 @@ class Books extends Component {
             <br></br>
                 <Row>
                     <Col size="md-6">
-                        <Jumbotron style={{minHeight:"150px"}}>
+                        <Jumbotron style={{ minHeight: "150px" }}>
+
                             <h1>Save a new Cheat Sheet below</h1>
                         </Jumbotron>
                         <form>
@@ -88,6 +89,7 @@ class Books extends Component {
                         </form>
                     </Col>
                     <Col size="md-6 sm-12">
+
                         <Jumbotron style={{minHeight:"150px"}}>
                             <h1>Cheat Sheets List</h1>
                         </Jumbotron>
