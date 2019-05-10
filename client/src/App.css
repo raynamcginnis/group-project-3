@@ -2,7 +2,12 @@
     font-family: 'Montserrat', sans-serif;
 }
 #inputs {
+    border-top: none;
+    border-left: none;
+    border-right: none;
     border-bottom: .5px solid black;
+    border-width: 1px;
+    text-align: center;
 }
 .btn-primary {
     border-radius: 2px;
@@ -33,6 +38,10 @@ nav {
     background-color:darkgray;
     color:#fff; 
     line-height: .3;
+}
+#signupLink:hover {
+    color: green;
+    font-size: 120%;
 }
 .navbar-light .navbar-nav .nav-link {
     font-family: 'Montserrat', sans-serif;
