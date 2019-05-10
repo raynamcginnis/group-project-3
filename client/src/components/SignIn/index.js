@@ -6,6 +6,7 @@ import { SignUpLink } from "../SignUp";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 
+// setting up the sign in page
 const SignInPage = () => (
     <div className="text-center mt-5" id="signInForm">
         <h1>Sign In</h1>
@@ -14,6 +15,7 @@ const SignInPage = () => (
     </div>
 );
 
+// setting the initial state of the sign in form
 const INITIAL_STATE = {
     email: "",
     password: "",
@@ -26,10 +28,10 @@ class SignInFormBase extends Component {
 
         this.state = { ...INITIAL_STATE };
     }
-
+    // the on submit event
     onSubmit = event => {
         const { email, password } = this.state;
-
+        // checks to see if sign in is valid and routes to the home page
         this.props.firebase
             .doSignInWithEmailAndPassword(email, password)
             .then(() => {
@@ -47,6 +49,7 @@ class SignInFormBase extends Component {
         this.setState({ [event.target.name]: event.target.value });
     };
 
+    // renders the sign in form
     render() {
         const { email, password, error } = this.state;
 
@@ -89,7 +92,7 @@ const SignInForm = compose(
     withRouter,
     withFirebase
 )(SignInFormBase);
-
+//exports sign in page
 export default SignInPage;
-
+// exports sign in form
 export { SignInForm };

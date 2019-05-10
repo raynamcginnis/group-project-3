@@ -1,7 +1,8 @@
+// importing firebase components  
 import app from "firebase/app";
 import "firebase/auth";
-//  require("dotenv").config();
 
+// setting the API config for firebase from the dotenv file
 const config = {
     apiKey: process.env.REACT_APP_API_KEY,
     authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -20,17 +21,18 @@ class Firebase {
     }
 
     // *** Auth API ***
-
+    // setting requirments for new user sign up
     doCreateUserWithEmailAndPassword = (email, password) =>
         this.auth.createUserWithEmailAndPassword(email, password);
     doSignInWithEmailAndPassword = (email, password) =>
         this.auth.signInWithEmailAndPassword(email, password);
     doSignOut = () => this.auth.signOut();
-
+    // send email for password reset
     doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
-
+    // update new password
     doPasswordUpdate = password =>
         this.auth.currentUser.updatePassword(password);
 }
 
+// export firebase
 export default Firebase;

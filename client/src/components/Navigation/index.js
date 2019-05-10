@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-
+// setting the routes for the sign in page
 const Navigation = () => (
   <div>
     <ul>

@@ -1,8 +1,10 @@
+/* h1 style */
 h1 {
 font-family: 'Montserrat Subrayada', sans-serif;
 font-family: 'Montserrat', sans-serif;
 font-size: 1.8em;
 }
+/* jumbotron css */
 .jumbotron {
     background-color: #B1BBF8;
     color:  rgb(128, 12, 33);

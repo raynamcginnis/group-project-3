@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 require("dotenv").config();
 
+// setting the sign up page
 const SignUpPage = () => (
     <div className="text-center mt-5" id="signInForm">
         <h1>Sign Up</h1>
@@ -14,6 +15,7 @@ const SignUpPage = () => (
     </div>
 );
 
+// setting the intial state of the sign up form
 const INITIAL_STATE = {
     username: "",
     email: "",
@@ -27,7 +29,7 @@ class SignUpFormBase extends Component {
         super(props);
         this.state = { ...INITIAL_STATE };
     }
-
+    // on submit event that sets the email and password to the firbase database
     onSubmit = event => {
         const { email, passwordOne } = this.state;
 
@@ -113,6 +115,7 @@ class SignUpFormBase extends Component {
     }
 }
 
+// sets the sign up link
 const SignUpLink = () => (
     <p>
         If you dont have an account?
@@ -124,6 +127,8 @@ const SignUpLink = () => (
 
 const SignUpForm = withRouter(withFirebase(SignUpFormBase));
 
+// exports sign up page
 export default SignUpPage;
 
+// exports sign up form and link
 export { SignUpForm, SignUpLink };

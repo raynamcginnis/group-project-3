@@ -1,3 +1,4 @@
+// Importing all needed components
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -7,6 +8,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import CodeIcon from "@material-ui/icons/Code";
 
+// setting width
 const styles = {
     root: {
         width: 500
@@ -25,7 +27,7 @@ class SimpleBottomNavigation extends React.Component {
     render() {
         const { classes } = this.props;
         const { value } = this.state;
-
+// returning bottom navigation html
         return (
             <BottomNavigation
                 value={value}
@@ -50,5 +52,5 @@ class SimpleBottomNavigation extends React.Component {
 SimpleBottomNavigation.propTypes = {
     classes: PropTypes.object.isRequired
 };
-
+// exporting bottom nav
 export default withStyles(styles)(SimpleBottomNavigation);

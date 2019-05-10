@@ -22,7 +22,7 @@ class Form extends Component {
     componentDidMount() {
         this.loadBooks();
     }
-
+    // loads everthing from our mongo database
     handleFormSubmit = event => {
         event.preventDefault();
         if (this.state.title) {
@@ -42,6 +42,7 @@ class Form extends Component {
             .catch(err => console.log(err));
     };
 
+    // finds our cheetsheets in the mongo database
     findById = id => {
         API.findById(id)
             .then(res =>

@@ -16,7 +16,9 @@ import SignUp from "./components/SignUp";
 
 const API_KEY = `${process.env.REACT_APP_API_KEY}`;
 
-console.log(API_KEY);
+console.log(API_KEY)
+
+// function to set all the routes for the site
 function App() {
     return (
         <Router>

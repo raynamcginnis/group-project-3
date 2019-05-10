@@ -6,7 +6,7 @@ import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
 import GoogleSearch from "../components/GoogleSearch";
 
-
+// sets the initial state of main page component
 class Main extends Component {
     state = {
         books: [],
@@ -15,8 +15,13 @@ class Main extends Component {
     };
 
 
+<<<<<<< HEAD
 
 
+=======
+   
+    // loads cheatsheets from database
+>>>>>>> master
     componentDidMount() {
         this.loadBooks();
     }
@@ -29,11 +34,14 @@ class Main extends Component {
             .catch(err => console.log(err));
     };
 
+        //deletes cheatsheets
     deleteBook = id => {
         API.deleteBook(id)
             .then(res => this.loadBooks())
             .catch(err => console.log(err));
     };
+
+    // searches the database for cheatsheet
     findById = id => {
         API.findById(id)
             .then(res =>
@@ -49,6 +57,7 @@ class Main extends Component {
         });
     };
 
+    // handles the submit event for searching for cheatsheets
     handleFormSubmit = event => {
         event.preventDefault();
         if (this.state.title) {
@@ -60,6 +69,7 @@ class Main extends Component {
         }
     };
 
+    //sets the main page setup
     render() {
         return (
             <Container fluid>
