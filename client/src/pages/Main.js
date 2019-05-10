@@ -15,8 +15,13 @@ class Main extends Component {
     };
 
 
+<<<<<<< HEAD
+
+
+=======
    
     // loads cheatsheets from database
+>>>>>>> master
     componentDidMount() {
         this.loadBooks();
     }

@@ -1,4 +1,13 @@
 /* button styling */
 .btn-success.disabled, .btn-success:disabled {
-    background-color: rgb(128, 12, 33)
+    background-color: #c99240;
+}
+
+.btn-success {
+    background-color: #f0a128;
+    border-color: darkgray;
+}
+
+.btn-success.active {
+    background-color: #c99240;
 }
