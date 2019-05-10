@@ -14,8 +14,6 @@ class Main extends Component {
         author: ""
     };
 
-
-   
     // loads cheatsheets from database
     componentDidMount() {
         this.loadBooks();
@@ -29,7 +27,7 @@ class Main extends Component {
             .catch(err => console.log(err));
     };
 
-        //deletes cheatsheets
+    //deletes cheatsheets
     deleteBook = id => {
         API.deleteBook(id)
             .then(res => this.loadBooks())
@@ -68,7 +66,7 @@ class Main extends Component {
     render() {
         return (
             <Container fluid>
-            <br></br>
+                <br />
                 <Row>
                     <Col size="lg-12">
                         <Jumbotron>
@@ -87,8 +85,7 @@ class Main extends Component {
                         />
                         <br>
                         </br> */}
-                        <GoogleSearch
-                        />
+                        <GoogleSearch />
                         <br />
                         {this.state.books.length ? (
                             <List>
@@ -101,17 +98,16 @@ class Main extends Component {
                                 ))}
                             </List>
                         ) : (
-                                <h3>No Results to Display</h3>
-                            )}
+                            <h3>No Results to Display</h3>
+                        )}
                     </Col>
                 </Row>
-                <div>
-                    
-                </div>
+                <div />
                 <div className="row">
                     <div className="col-sm-12">
                         <p
-                            className="fixed-bottom text-center mt-4 mb-2 pt-2 pb-2" id="footer"
+                            className="fixed-bottom text-center mb-0"
+                            id="footer"
                             style={{
                                 borderTop: ".5px solid grey",
                                 color: "rgb(80, 122, 213)",
@@ -125,7 +121,7 @@ class Main extends Component {
                                 rel="noopener noreferrer"
                             >
                                 Rayna
-                </a>{" "}
+                            </a>{" "}
                             |{" "}
                             <a
                                 href="https://github.com/belamorris"
@@ -133,7 +129,7 @@ class Main extends Component {
                                 rel="noopener noreferrer"
                             >
                                 Robert
-                </a>{" "}
+                            </a>{" "}
                             |{" "}
                             <a
                                 href="https://github.com/TGHeadle1371"
@@ -141,18 +137,13 @@ class Main extends Component {
                                 rel="noopener noreferrer"
                             >
                                 Thomas
-                </a>{" "}
+                            </a>{" "}
                         </p>
                     </div>
                 </div>
             </Container>
-          
-                
-           
         );
     }
 }
-
-
 
 export default Main;
