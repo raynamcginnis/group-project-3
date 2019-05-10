@@ -68,6 +68,7 @@ class Main extends Component {
     render() {
         return (
             <Container fluid>
+            <br></br>
                 <Row>
                     <Col size="lg-12">
                         <Jumbotron>
@@ -100,13 +101,58 @@ class Main extends Component {
                                 ))}
                             </List>
                         ) : (
-                            <h3>No Results to Display</h3>
-                        )}
+                                <h3>No Results to Display</h3>
+                            )}
                     </Col>
                 </Row>
+                <div>
+                    
+                </div>
+                <div className="row">
+                    <div className="col-sm-12">
+                        <p
+                            className="fixed-bottom text-center mt-4 mb-2 pt-2 pb-2" id="footer"
+                            style={{
+                                borderTop: ".5px solid grey",
+                                color: "rgb(80, 122, 213)",
+                                height: "25px"
+                            }}
+                        >
+                            Copyright 2019 &copy; |{" "}
+                            <a
+                                href="https://github.com/raynamcginnis"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Rayna
+                </a>{" "}
+                            |{" "}
+                            <a
+                                href="https://github.com/belamorris"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Robert
+                </a>{" "}
+                            |{" "}
+                            <a
+                                href="https://github.com/TGHeadle1371"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Thomas
+                </a>{" "}
+                        </p>
+                    </div>
+                </div>
             </Container>
+          
+                
+           
         );
     }
 }
+
+
 
 export default Main;

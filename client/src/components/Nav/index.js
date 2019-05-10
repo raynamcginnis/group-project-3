@@ -8,7 +8,7 @@ function Nav() {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand" href="#">
         {/* Web Dev Cheat Sheets */}
-        <img src="images/webdevcheatsheets.png" width="300" alt="logo for web dev cheat sheets"></img>
+        <img src="images/webdevcheatsheets.png" width="100%" alt="logo for web dev cheat sheets"></img>
       </a>
       <div className="navbar" id="navbarNavAltMarkup">
         <div className="navbar-nav">
