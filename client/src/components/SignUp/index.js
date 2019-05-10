@@ -8,7 +8,7 @@ require("dotenv").config();
 // setting the sign up page
 const SignUpPage = () => (
     <div className="text-center mt-5" id="signInForm">
-        <h1>SignUp</h1>
+        <h1>Sign Up</h1>
         <FirebaseContext.Consumer>
             {firebase => <SignUpForm firebase={firebase} />}
         </FirebaseContext.Consumer>
