@@ -1,5 +1,6 @@
 import React from "react";
 
+// sets the about page
 function About() {
     return (
         <div className="m-4 pt-2 text-center">

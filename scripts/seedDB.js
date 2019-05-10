@@ -1,13 +1,14 @@
 const mongoose = require("mongoose");
 const db = require("../models");
-// This file empties the Books collection and inserts the books below
+// This file empties the cheatsheets collection and inserts the cheatsheet below
 
-    
+    // connects to the mong database
     mongoose.connect(
       process.env.MONGODB_URI ||
       "mongodb://localhost/reactreadinglist"
     );
     
+    // seeds cheatsheets to mongo
     const bookSeed = [
       {
         title: "Mongo",
