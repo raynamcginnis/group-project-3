@@ -2,6 +2,7 @@
 import React from "react";
 import "./style.css";
 
+// This function sets the navigation bar and links and exports it
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
