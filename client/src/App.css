@@ -2,7 +2,11 @@
     font-family: 'Montserrat', sans-serif;
 
 }
+.row {
+    margin: 0;
+    min-width: 100%;
 
+}
 H1 {
     font-family: 'Karla', sans-serif;
 
@@ -16,15 +20,32 @@ H3 {
 p {
     font-family: 'Montserrat', sans-serif; 
 }
-
+nav {
+    text-shadow: 1px 1px 2px black;
+    border-radius: 0;
+    background-color:darkgray;
+    color:#fff; 
+}
 .navbar-light .navbar-nav .nav-link {
     font-family: 'Montserrat', sans-serif;
 }
 .navbar-light .navbar-nav .nav-link:active {
     color: darkgrey;
 }
+.container-fluid {
+    padding: 0;
+}
 
+a.navbar-brand{
+    font-size: 1.5em;
+}
+a.nav-item.nav-link{
+    font-size: 1.1em;
+}
 .jumbotron {
     background-color:lightgray;
     color:#ea0e1d;
+    background-color:darkgray;
+    color:#fff;
+    text-shadow: 1px 1px 2px black;
 }

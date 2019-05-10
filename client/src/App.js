@@ -13,6 +13,10 @@ import Home from "./components/Home";
 import SignIn from "./components/SignIn";
 import SignOut from "./components/SignOut";
 import SignUp from "./components/SignUp";
+
+const API_KEY = `${process.env.REACT_APP_API_KEY}`;
+
+console.log(API_KEY);
 function App() {
     return (
         <Router>
@@ -27,10 +31,7 @@ function App() {
                     <Route exact path="/SignOut" component={SignOut} />
                     <Route exact path="/SignUp" component={SignUp} />
                     <Route exact path="/Main.js" component={Main} />
-                    <Route
-                        exact
-                        path="/CheatSheets.js"
-                        component={CheatSheets}
+                    <Route exact path="/CheatSheets.js" component={CheatSheets}
                     />
                     <Route exact path="/books/:id" component={Detail} />
                     <Route exact path="/About.js" component={About} />
