@@ -56,7 +56,7 @@ class SignInFormBase extends Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-lg-12">
-                        <form onSubmit={this.onSubmit} id="signInInputs">
+                        <form onSubmit={this.onSubmit} id="formInputs">
                             <input
                                 id={"inputs"}
                                 name="email"
