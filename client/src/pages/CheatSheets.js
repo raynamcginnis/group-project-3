@@ -16,7 +16,7 @@ class Books extends Component {
     componentDidMount() {
         this.loadBooks();
     }
-
+    // loads cheetsheets from the database
     loadBooks = () => {
         API.getBooks()
             .then(res =>
@@ -29,6 +29,7 @@ class Books extends Component {
             .catch(err => console.log(err));
     };
 
+    // delete function for deleting a cheatsheet from the database
     deleteBook = id => {
         API.deleteBook(id)
             .then(res => this.loadBooks())
@@ -41,7 +42,7 @@ class Books extends Component {
             [name]: value
         });
     };
-
+    // saves a new cheatsheet to the database
     handleFormSubmit = event => {
         event.preventDefault();
         if (this.state.title && this.state.author) {
@@ -53,6 +54,7 @@ class Books extends Component {
                 .catch(err => console.log(err));
         }
     };
+    // sets the cheatsheets page
     render() {
         return (
             <Container fluid>

@@ -3,6 +3,7 @@ import { AutoComplete } from "material-ui";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
+// this class sets the autocomplete function using material UI
 class MaterialUIAutocomplete extends Component {
     constructor(props) {
         super(props);

@@ -1,7 +1,8 @@
+// importing react and css
 import React from "react";
 import "./styles.css";
-// This file exports the Input, TextArea, and FormBtn components
 
+// This file exports the Input, TextArea, and FormBtn components
 export function Input(props) {
     return (
         <div className="form-group">
@@ -10,6 +11,7 @@ export function Input(props) {
     );
 }
 
+// exporting Text Area
 export function TextArea(props) {
     return (
         <div className="form-group">
@@ -18,6 +20,7 @@ export function TextArea(props) {
     );
 }
 
+// exporting FormBtn
 export function FormBtn(props) {
     return (
         <button
