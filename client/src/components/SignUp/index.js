@@ -6,7 +6,7 @@ import * as ROUTES from "../../constants/routes";
 require("dotenv").config();
 
 const SignUpPage = () => (
-    <div>
+    <div className="text-center mt-5" id="signInForm">
         <h1>SignUp</h1>
         <FirebaseContext.Consumer>
             {firebase => <SignUpForm firebase={firebase} />}
@@ -56,41 +56,59 @@ class SignUpFormBase extends Component {
             email === "" ||
             username === "";
         return (
-            <form onSubmit={this.onSubmit}>
-                <input
-                    name="username"
-                    value={username}
-                    onChange={this.onChange}
-                    type="text"
-                    placeholder="Full Name"
-                />
-                <input
-                    name="email"
-                    value={email}
-                    onChange={this.onChange}
-                    type="text"
-                    placeholder="Email Address"
-                />
-                <input
-                    name="passwordOne"
-                    value={passwordOne}
-                    onChange={this.onChange}
-                    type="password"
-                    placeholder="Password"
-                />
-                <input
-                    name="passwordTwo"
-                    value={passwordTwo}
-                    onChange={this.onChange}
-                    type="password"
-                    placeholder="Confirm Password"
-                />
-                <button disabled={isInvalid} type="submit">
-                    Sign Up
-                </button>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12">
+                        <form onSubmit={this.onSubmit}>
+                            <input
+                                id="inputs"
+                                name="username"
+                                value={username}
+                                onChange={this.onChange}
+                                type="text"
+                                placeholder="Full Name"
+                            />
+                            <br />
+                            <input
+                                id="inputs"
+                                name="email"
+                                value={email}
+                                onChange={this.onChange}
+                                type="text"
+                                placeholder="Email Address"
+                            />
+                            <br />
+                            <input
+                                id="inputs"
+                                name="passwordOne"
+                                value={passwordOne}
+                                onChange={this.onChange}
+                                type="password"
+                                placeholder="Password"
+                            />
+                            <br />
+                            <input
+                                id="inputs"
+                                name="passwordTwo"
+                                value={passwordTwo}
+                                onChange={this.onChange}
+                                type="password"
+                                placeholder="Confirm Password"
+                            />
+                            <br />
+                            <button
+                                className="btn-primary mt-3"
+                                disabled={isInvalid}
+                                type="submit"
+                            >
+                                Sign Up
+                            </button>
 
-                {error && <p>{error.message}</p>}
-            </form>
+                            {error && <p>{error.message}</p>}
+                        </form>
+                    </div>
+                </div>
+            </div>
         );
     }
 }
@@ -98,7 +116,7 @@ class SignUpFormBase extends Component {
 const SignUpLink = () => (
     <p>
         If you dont have an account?
-        <a className="nav-item nav-link" href="/signup">
+        <a className="nav-item nav-link" id="signupLink" href="/signup">
             Sign Up
         </a>
     </p>
