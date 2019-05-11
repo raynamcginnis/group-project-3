@@ -12,6 +12,7 @@ git clone: https://github.com/raynamcginnis/group-project-3.git
 cd into the file directory
 npm install
 npm start
+(Will not work without API key from Firebase)
 ```
 ### Prerequisites
 
@@ -19,6 +20,10 @@ What things you need to install the software
 
 ```
 axios
+react
+react-dom
+react-router-dom
+react-scripts
 express
 if-env
 jquery
@@ -34,6 +39,7 @@ A step by step series of examples that tell you how to get a development env run
 git clone: https://github.com/raynamcginnis/group-project-3.git
 npm i
 npm start
+(Will not work without API key from Firebase)
 
 ```
 - dev env will require a db connection through mongod
@@ -43,6 +49,7 @@ Run again:
 ```
 npm i
 npm start
+(Will not work without API key from Firebase)
 
 ```
 
@@ -63,12 +70,12 @@ This application is deployed through Heroku [Live Site](https://blooming-basin-9
 
 ## Authors
 
-* **Thomas Headle** - [ThomasHeadle](https://github.com/tgheadle1371)
-* **Rayna McGinnis** - [RaynaMcGinnis](https://github.com/raynamcginnis)
-* **Robert Morris** - [RobertMorris](https://github.com/belamorris)
+**Thomas Headle** - [Thomas Headle](https://github.com/tgheadle1371)
+**Rayna McGinnis** - [Rayna McGinnis](https://github.com/raynamcginnis)
+**Robert Morris** - [Robert Morris](https://github.com/belamorris)
 
 
 ## Acknowledgments
 
-* Thank you to * **Overapi** - [overapi](https://overapi.com)
+* Thank you to **Overapi** - [overapi](https://overapi.com)
 
