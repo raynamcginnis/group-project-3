@@ -5,13 +5,18 @@ import { compose } from "recompose";
 import { SignUpLink } from "../SignUp";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
+import Nav from "../Nav";
 
 // setting up the sign in page
 const SignInPage = () => (
-    <div className="text-center mt-5" id="signInForm">
-        <h1>Sign In</h1>
-        <SignInForm />
-        <SignUpLink />
+    <div>
+        {" "}
+        <Nav />
+        <div className="text-center mt-5" id="signInForm">
+            <h1>Sign In</h1>
+            <SignInForm />
+            <SignUpLink />
+        </div>
     </div>
 );
 
@@ -56,31 +61,37 @@ class SignInFormBase extends Component {
         const isInvalid = password === "" || email === "";
 
         return (
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-lg-12">
-                        <form onSubmit={this.onSubmit} id="formInputs">
-                            <input
-                                id={"inputs"}
-                                name="email"
-                                value={email}
-                                onChange={this.onChange}
-                                type="text"
-                                placeholder="Email Address"
-                            />
-                            <input
-                                id="inputs"
-                                name="password"
-                                value={password}
-                                onChange={this.onChange}
-                                type="password"
-                                placeholder="Password"
-                            />
-                            <button className="btn-primary mt-3" disabled={isInvalid} type="submit">
-                                Sign In
-                            </button>
-                            {error && <p>{error.message}</p>}
-                        </form>
+            <div>
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <form onSubmit={this.onSubmit} id="formInputs">
+                                <input
+                                    id={"inputs"}
+                                    name="email"
+                                    value={email}
+                                    onChange={this.onChange}
+                                    type="text"
+                                    placeholder="Email Address"
+                                />
+                                <input
+                                    id="inputs"
+                                    name="password"
+                                    value={password}
+                                    onChange={this.onChange}
+                                    type="password"
+                                    placeholder="Password"
+                                />
+                                <button
+                                    className="btn-primary mt-3"
+                                    disabled={isInvalid}
+                                    type="submit"
+                                >
+                                    Sign In
+                                </button>
+                                {error && <p>{error.message}</p>}
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

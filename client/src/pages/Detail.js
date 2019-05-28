@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
+import Footer from "../components/Footer";
+import NavBanner from "../components/NavBanner";
 
 class Detail extends Component {
     state = {
@@ -19,6 +21,7 @@ class Detail extends Component {
     render() {
         return (
             <Container fluid>
+                <NavBanner />
                 <Row>
                     <Col size="md-12">
                         <Jumbotron
@@ -32,7 +35,7 @@ class Detail extends Component {
                         >
                             <div>
                                 <h3>{this.state.book.title}</h3>
-                                <br></br>
+                                <br />
                                 <img
                                     style={{
                                         width: "500px",
@@ -54,43 +57,7 @@ class Detail extends Component {
                         <Link to="/CheatSheets.js">← Back to Cheat Sheets</Link>
                     </Col>
                 </Row>
-                <div className="row">
-                    <div className="col-sm-12">
-                        <p
-                            className="fixed-bottom text-center mb-0" id="footer"
-                            style={{
-                                borderTop: ".5px solid grey",
-                                color: "rgb(80, 122, 213)",
-                                height: "25px"
-                            }}
-                        >
-                            Copyright 2019 &copy; |{" "}
-                            <a
-                                href="https://github.com/raynamcginnis"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Rayna
-                </a>{" "}
-                            |{" "}
-                            <a
-                                href="https://github.com/belamorris"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Robert
-                </a>{" "}
-                            |{" "}
-                            <a
-                                href="https://github.com/TGHeadle1371"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Thomas
-                </a>{" "}
-                        </p>
-                    </div>
-                </div>
+                <Footer />
             </Container>
         );
     }

@@ -62,13 +62,26 @@ function SimpleMenu(props) {
                     onClose={handleClose}
                 >
                     <MenuItem onClick={handleClose}>
-                        <a className="nav-item nav-link" href="/SignIn">
-                            Sign In
+                        {" "}
+                        <a className="nav-item nav-link" href="/Main.js">
+                            Home <span className="sr-only">(current)</span>
                         </a>
                     </MenuItem>
                     <MenuItem onClick={handleClose}>
-                        <a className="nav-item nav-link" href="/SignUp">
-                            Sign Up
+                        {" "}
+                        <a className="nav-item nav-link" href="/CheatSheets.js">
+                            Cheat Sheets
+                        </a>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                        {" "}
+                        <a className="nav-item nav-link" href="/About.js">
+                            About
+                        </a>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                        <a className="nav-item nav-link" href="/SignIn">
+                            Sign Out
                         </a>
                     </MenuItem>
                 </Menu>

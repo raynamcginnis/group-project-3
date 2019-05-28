@@ -5,6 +5,8 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
 import GoogleSearch from "../components/GoogleSearch";
+import Footer from "../components/Footer";
+import NavBanner from "../components/NavBanner";
 
 // sets the initial state of main page component
 class Main extends Component {
@@ -66,6 +68,7 @@ class Main extends Component {
     render() {
         return (
             <Container fluid>
+                <NavBanner />
                 <br />
                 <Row>
                     <Col size="lg-12">
@@ -103,44 +106,7 @@ class Main extends Component {
                     </Col>
                 </Row>
                 <div />
-                <div className="row">
-                    <div className="col-sm-12">
-                        <p
-                            className="fixed-bottom text-center mb-0"
-                            id="footer"
-                            style={{
-                                borderTop: ".5px solid grey",
-                                color: "rgb(80, 122, 213)",
-                                height: "25px"
-                            }}
-                        >
-                            Copyright 2019 &copy; |{" "}
-                            <a
-                                href="https://github.com/raynamcginnis"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Rayna
-                            </a>{" "}
-                            |{" "}
-                            <a
-                                href="https://github.com/belamorris"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Robert
-                            </a>{" "}
-                            |{" "}
-                            <a
-                                href="https://github.com/TGHeadle1371"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Thomas
-                            </a>{" "}
-                        </p>
-                    </div>
-                </div>
+                <Footer />
             </Container>
         );
     }
