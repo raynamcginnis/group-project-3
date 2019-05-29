@@ -6,17 +6,20 @@ import { SignUpLink } from "../SignUp";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 import Nav from "../Nav";
+import Flash from "react-reveal/Flash";
 
 // setting up the sign in page
 const SignInPage = () => (
     <div>
         {" "}
         <Nav />
-        <div className="text-center mt-5" id="signInForm">
-            <h1>Sign In</h1>
-            <SignInForm />
-            <SignUpLink />
-        </div>
+        <Flash>
+            <div className="text-center mt-5" id="signInForm">
+                <h1>Sign In</h1>
+                <SignInForm />
+                <SignUpLink />
+            </div>
+        </Flash>
     </div>
 );
 

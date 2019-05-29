@@ -4,18 +4,21 @@ import { withFirebase } from "../Firebase";
 import { withRouter } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 import Nav from "../Nav";
+import Flash from "react-reveal/Flash";
 require("dotenv").config();
 
 // setting the sign up page
 const SignUpPage = () => (
     <div>
         <Nav />
-        <div className="text-center mt-5" id="signInForm">
-            <h1>Sign Up</h1>
-            <FirebaseContext.Consumer>
-                {firebase => <SignUpForm firebase={firebase} />}
-            </FirebaseContext.Consumer>
-        </div>
+        <Flash>
+            <div className="text-center mt-5" id="signInForm">
+                <h1>Sign Up</h1>
+                <FirebaseContext.Consumer>
+                    {firebase => <SignUpForm firebase={firebase} />}
+                </FirebaseContext.Consumer>
+            </div>
+        </Flash>
     </div>
 );
 

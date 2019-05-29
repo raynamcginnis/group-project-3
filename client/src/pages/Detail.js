@@ -5,6 +5,7 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import Footer from "../components/Footer";
 import NavBanner from "../components/NavBanner";
+import Rotate from "react-reveal/Rotate";
 
 class Detail extends Component {
     state = {
@@ -24,31 +25,33 @@ class Detail extends Component {
                 <NavBanner />
                 <Row>
                     <Col size="md-12">
-                        <Jumbotron
-                            style={{
-                                clear: "both",
-                                textAlign: "center",
-                                maxWidth: "100%",
-                                height: "auto",
-                                padding: "auto"
-                            }}
-                        >
-                            <div>
-                                <h3>{this.state.book.title}</h3>
-                                <br />
-                                <img
-                                    style={{
-                                        width: "500px",
-                                        margin: "auto",
-                                        maxWidth: "100%",
-                                        height: "auto"
-                                    }}
-                                    alt="cheatsheet"
-                                    placeholder={this.state.book.title}
-                                    src={this.state.book.author}
-                                />{" "}
-                            </div>
-                        </Jumbotron>
+                        <Rotate top left>
+                            <Jumbotron
+                                style={{
+                                    clear: "both",
+                                    textAlign: "center",
+                                    maxWidth: "100%",
+                                    height: "auto",
+                                    padding: "auto"
+                                }}
+                            >
+                                <div>
+                                    <h3>{this.state.book.title}</h3>
+                                    <br />
+                                    <img
+                                        style={{
+                                            width: "500px",
+                                            margin: "auto",
+                                            maxWidth: "100%",
+                                            height: "auto"
+                                        }}
+                                        alt="cheatsheet"
+                                        placeholder={this.state.book.title}
+                                        src={this.state.book.author}
+                                    />{" "}
+                                </div>
+                            </Jumbotron>
+                        </Rotate>
                     </Col>
                 </Row>
 

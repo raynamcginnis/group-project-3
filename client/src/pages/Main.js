@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import GoogleSearch from "../components/GoogleSearch";
 import Footer from "../components/Footer";
 import NavBanner from "../components/NavBanner";
+import Bounce from "react-reveal/Bounce";
 
 // sets the initial state of main page component
 class Main extends Component {
@@ -72,9 +73,11 @@ class Main extends Component {
                 <br />
                 <Row>
                     <Col size="lg-12">
-                        <Jumbotron>
-                            <h1> SEARCH FOR A CHEAT SHEET BELOW!</h1>
-                        </Jumbotron>
+                        <Bounce left>
+                            <Jumbotron>
+                                <h1> SEARCH FOR A CHEAT SHEET BELOW!</h1>
+                            </Jumbotron>
+                        </Bounce>
                         {/* <Input
                             name="title"
                             type="text"

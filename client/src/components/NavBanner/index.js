@@ -16,7 +16,6 @@ function HomeIcon(props) {
 
 function SimpleMenu(props) {
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const { classes } = props;
     function handleClick(event) {
         setAnchorEl(event.currentTarget);
     }
