@@ -7,7 +7,7 @@ import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 import Nav from "../Nav";
 import Flash from "react-reveal/Flash";
-
+import "./style.css";
 // setting up the sign in page
 const SignInPage = () => (
     <div>
