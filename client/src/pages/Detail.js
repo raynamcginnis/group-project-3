@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
+import Footer from "../components/Footer";
+import NavBanner from "../components/NavBanner";
+import Rotate from "react-reveal/Rotate";
 
 class Detail extends Component {
     state = {
@@ -19,33 +22,36 @@ class Detail extends Component {
     render() {
         return (
             <Container fluid>
+                <NavBanner />
                 <Row>
                     <Col size="md-12">
-                        <Jumbotron
-                            style={{
-                                clear: "both",
-                                textAlign: "center",
-                                maxWidth: "100%",
-                                height: "auto",
-                                padding: "auto"
-                            }}
-                        >
-                            <div>
-                                <h3>{this.state.book.title}</h3>
-                                <br></br>
-                                <img
-                                    style={{
-                                        width: "500px",
-                                        margin: "auto",
-                                        maxWidth: "100%",
-                                        height: "auto"
-                                    }}
-                                    alt="cheatsheet"
-                                    placeholder={this.state.book.title}
-                                    src={this.state.book.author}
-                                />{" "}
-                            </div>
-                        </Jumbotron>
+                        <Rotate top left>
+                            <Jumbotron
+                                style={{
+                                    clear: "both",
+                                    textAlign: "center",
+                                    maxWidth: "100%",
+                                    height: "auto",
+                                    padding: "auto"
+                                }}
+                            >
+                                <div>
+                                    <h3>{this.state.book.title}</h3>
+                                    <br />
+                                    <img
+                                        style={{
+                                            width: "500px",
+                                            margin: "auto",
+                                            maxWidth: "100%",
+                                            height: "auto"
+                                        }}
+                                        alt="cheatsheet"
+                                        placeholder={this.state.book.title}
+                                        src={this.state.book.author}
+                                    />{" "}
+                                </div>
+                            </Jumbotron>
+                        </Rotate>
                     </Col>
                 </Row>
 
@@ -54,43 +60,7 @@ class Detail extends Component {
                         <Link to="/CheatSheets.js">← Back to Cheat Sheets</Link>
                     </Col>
                 </Row>
-                <div className="row">
-                    <div className="col-sm-12">
-                        <p
-                            className="fixed-bottom text-center mb-0" id="footer"
-                            style={{
-                                borderTop: ".5px solid grey",
-                                color: "rgb(80, 122, 213)",
-                                height: "25px"
-                            }}
-                        >
-                            Copyright 2019 &copy; |{" "}
-                            <a
-                                href="https://github.com/raynamcginnis"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Rayna
-                </a>{" "}
-                            |{" "}
-                            <a
-                                href="https://github.com/belamorris"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Robert
-                </a>{" "}
-                            |{" "}
-                            <a
-                                href="https://github.com/TGHeadle1371"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Thomas
-                </a>{" "}
-                        </p>
-                    </div>
-                </div>
+                <Footer />
             </Container>
         );
     }
